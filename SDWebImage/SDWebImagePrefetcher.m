@@ -39,6 +39,7 @@
 - (id)init {
     if ((self = [super init])) {
         _manager = [SDWebImageManager new];
+        _manager.cacheKeyFilter = [SDWebImageManager sharedManager].cacheKeyFilter;
         _options = SDWebImageLowPriority;
         _prefetcherQueue = dispatch_get_main_queue();
         self.maxConcurrentDownloads = 3;
